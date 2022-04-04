@@ -1,17 +1,28 @@
 package main
 
-import "fmt"
+import (
+	_ "embed"
+	"fmt"
+)
 
-const hrule = "----------------------------------------------------------------"
-
-func main() {
+func PrintSmiley() {
 	fmt.Println("😀")
-	fmt.Println(hrule)
+}
 
+func PrintUnicodeEmoticons() {
 	for r := 0x1F600; r <= 0x1F64F; r++ {
 		fmt.Printf("%c ", r)
 	}
-	fmt.Println()
-	fmt.Println(hrule)
+}
 
+//go:embed emoji-test.txt
+var emojiTest string
+
+func PrintEmojiTest() {
+	print(emojiTest)
+	fmt.Println()
+}
+
+func main() {
+	PrintEmojiTest()
 }
