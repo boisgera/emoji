@@ -19,8 +19,7 @@ func PrintUnicodeEmoticons() {
 var emojiTest string
 
 func PrintEmojiTest() {
-	print(emojiTest)
-	fmt.Println()
+	fmt.Println(emojiTest)
 }
 
 func main() {
